@@ -11,8 +11,7 @@ class CustomDivider extends StatelessWidget {
     return SizedBox(
       width: double.infinity.w,
       child: Divider(
-        color: color,
-        thickness: 1.h,
+        color: color ?? AppColors.kMistBlue, thickness: 1.5.h,
       ),
     );
   }

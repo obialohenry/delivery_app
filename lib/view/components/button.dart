@@ -41,11 +41,11 @@ class DefaultButtonMain extends StatelessWidget {
           ? null
           : onPressed,
       child: Container(
-        height: height ?? 45.0.h,
+        height: height ?? 40.0.h,
         width: width,
         padding: padding,
         decoration: BoxDecoration(
-          color: color ?? AppColors.kWhite,
+          color: color ?? AppColors.kSkylineBlue,
 
             /// This line of code is setting the background color of the button. It checks the value of the
             /// `buttonState` parameter and if it is equal to `ButtonState.disabled`, it sets the color to
@@ -59,7 +59,7 @@ class DefaultButtonMain extends StatelessWidget {
             //     ? AppColors.disabledGradient
             //     : AppColors.gradientMain,
             // border: Border.all(color: borderColor ?? Colors.transparent),
-            borderRadius: BorderRadius.circular(borderRadius ?? 52.0.r),
+          borderRadius: BorderRadius.circular(borderRadius ?? 8.0.r),
             border: Border.all(color: borderColor ?? Colors.transparent)),
         child: Center(
           /// This code is setting the child of the `TextButton` widget. It checks the value of the
@@ -84,8 +84,9 @@ class DefaultButtonMain extends StatelessWidget {
                   style: TextStyle(
                     color: textColor ?? Colors.white,
                     fontSize: fontSize ?? 14.0.spMin,
-                    fontWeight: fontWeight ?? FontWeight.w500,
+                    fontWeight: fontWeight ?? FontWeight.w700,
                     fontFamily: fontFamily ?? ibmPlexSans,
+                    height: (20 / 14).h,
                   ),
                 ),
         ),

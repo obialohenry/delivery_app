@@ -1,3 +1,4 @@
+import 'package:deliveryapp/src/components.dart';
 import 'package:deliveryapp/src/config.dart';
 import 'package:deliveryapp/view/components/image_view.dart';
 import 'package:deliveryapp/view_model/dashboard_view_model.dart';
@@ -17,6 +18,10 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
     final dashboardProvider = ref.watch(dashboardViewModel);
     return SafeArea(
       child: Scaffold(
+        appBar: AppBars.mainAppBar(
+          context,
+          title: dashboardProvider.screenTitle(dashboardProvider.currentIndex),
+        ),
         body: dashboardProvider.screens[dashboardProvider.currentIndex],
         backgroundColor: AppColors.kSoftSnow,
         bottomNavigationBar: SizedBox(

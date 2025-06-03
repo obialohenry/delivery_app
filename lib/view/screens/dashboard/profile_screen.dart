@@ -8,6 +8,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.kSoftSnow,
       body: Center(
         child: TextView(text: welcomeToProfileScreen,fontSize: 18.spMin,fontWeight: FontWeight.bold,color: Colors.black,),
       ),

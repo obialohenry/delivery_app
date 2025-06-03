@@ -5,4 +5,8 @@ class AppImages {
   static const cartIcon = "${_baseUrl}delivery_app_cart_icon.png";
   static const favoritesIcon = "${_baseUrl}delivery_app_favorites_icon.png";
   static const profileIcon = "${_baseUrl}delivery_app_profile_icon.png";
+  static const notifsIcon = "${_baseUrl}delivery_app_notifs.png";
+  static const arrowBackIcon = "${_baseUrl}delivery_app_arrow_back_icon.png";
+  static const phoneIcon = "${_baseUrl}delivery_app_phone_icon.png";
+  static const deleteIcon = "${_baseUrl}delivery_app_delete_icon.png";
 }

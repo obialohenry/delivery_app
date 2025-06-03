@@ -1,8 +1,16 @@
 const welcomeToSplashScreen = "Welcome to Splash Screen.";
 const ibmPlexSans = "IBMPlexSans";
+const sfPro = "SF Pro";
 const welcomeToFavoritesScreen = "Welcome to Favorites Screen.";
 const welcomeToProfileScreen = "Welcome to Profile Screen.";
 const home = 'Home';
 const cart = "Cart";
 const favorites = "Favorites";
 const profile = "Profile";
+const yourCart = "Your Cart";
+const orderInfo = "Order Info";
+const subTotal = "Subtotal";
+const shipping = "Shipping";
+const total = "Total";
+const technology = "Technology";
+
