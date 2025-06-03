@@ -43,19 +43,19 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               physics: const NeverScrollableScrollPhysics(),
               itemCount: homeProvider.accessories.length,
               itemBuilder: (context, index) {
-                AccessoriesModel accessories = homeProvider.accessories[index];
+                AccessoriesModel anAccessory = homeProvider.accessories[index];
                 return GestureDetector(
                   onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => AnAccessoryDetailsScreen(
-                          name: accessories.name,
-                          price: accessories.price,
-                          image: accessories.image,
-                          detail1: accessories.descriptions[0],
-                          detail2: accessories.descriptions[1],
-                          accessory: accessories,
+                          name: anAccessory.name,
+                          price: anAccessory.price,
+                          image: anAccessory.image,
+                          detail1: anAccessory.descriptions[0],
+                          detail2: anAccessory.descriptions[1],
+                          accessory: anAccessory,
                         ),
                       ),
                     );
@@ -72,27 +72,27 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                           color: AppColors.kLavenderMist,
                         ),
                         child: ImageView.asset(
-                          accessories.image,
+                          anAccessory.image,
                           //  width: 100.w,
                           //  height: 100.h,
                         ),
                       ),
                       Gap(3.h),
                       TextView(
-                        text: accessories.name,
+                        text: anAccessory.name,
                         fontSize: 14.spMin,
                         fontWeight: FontWeight.w400,
                         color: AppColors.kBlack,
                       ),
                       TextView(
-                        text: "${accessories.descriptions[0]}|${accessories.descriptions[1]}",
+                        text: "${anAccessory.descriptions[0]}|${anAccessory.descriptions[1]}",
                         fontSize: 14.spMin,
                         fontWeight: FontWeight.w400,
                         color: AppColors.kBlack,
                       ),
                       Gap(3.h),
                       TextView(
-                        text: "\$${accessories.price.toStringAsFixed(2)}",
+                        text: "\$${anAccessory.price.toStringAsFixed(2)}",
                         fontSize: 16.spMin,
                         fontWeight: FontWeight.w700,
                         color: AppColors.kBlack,

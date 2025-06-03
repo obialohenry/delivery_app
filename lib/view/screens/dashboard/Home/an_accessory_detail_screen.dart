@@ -92,16 +92,15 @@ class _AnAccessoryDetailsScreenState extends ConsumerState<AnAccessoryDetailsScr
               color: AppColors.kBlack,
             ),
             Gap(20.h),
-            TextView(text: aboutThisItem, fontWeight: FontWeight.w400, fontSize: 14.spMin,color: AppColors.kSlateGrey,),
+            TextView(
+              text: aboutThisItem,
+              fontWeight: FontWeight.w400,
+              fontSize: 14.spMin,
+              color: AppColors.kSlateGrey,
+            ),
             Padding(
               padding: EdgeInsetsGeometry.only(left: 10.w),
-            child:
-             BulletList(
-              info: [
-           firstAccessoryInfo,
-           secondAccessoryInfo
-            ],
-            ),
+              child: BulletList(info: [firstAccessoryInfo, secondAccessoryInfo]),
             ),
           ],
         ),
@@ -115,7 +114,12 @@ class _AnAccessoryDetailsScreenState extends ConsumerState<AnAccessoryDetailsScr
         ),
         child: Column(
           children: [
-            DefaultButtonMain(text: addToCart),
+            DefaultButtonMain(
+              text: addToCart,
+              onPressed: () {
+                homeProvider.addAccessoryToCart(widget.accessory);
+              },
+            ),
             Spacer(),
           ],
         ),

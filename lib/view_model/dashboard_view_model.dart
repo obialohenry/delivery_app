@@ -32,7 +32,7 @@ class DashboardViewModel extends ChangeNotifier {
         return "";
     }
   }
-  
+
   //return a boolean value based on the argument index.
   bool showSearchTextfieldInDashboardScreen(int index) {
     switch (index) {
@@ -47,5 +47,10 @@ class DashboardViewModel extends ChangeNotifier {
       default:
         return false;
     }
+  }
+
+  void setDashboardToHome() {
+    _currentIndex = 0;
+    notifyListeners();
   }
 }

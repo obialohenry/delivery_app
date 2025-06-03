@@ -142,7 +142,7 @@ class _AlertBodyState extends State<AlertBody> with SingleTickerProviderStateMix
                         width: 250.w,
                         child: TextView(
                           text: widget.msg,
-                          color: Colors.white,
+                          color: AppColors.kBlack,
                           fontSize: 14.spMin,
                           maxLines: 3,
                           fontWeight: FontWeight.w600,
