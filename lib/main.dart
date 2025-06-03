@@ -40,7 +40,7 @@ class _MyAppState extends State<MyApp> {
           home: child,
         );
       },
-      child: const SplashScreen(),
+      child: const DashboardScreen(),
     );
   }
 }

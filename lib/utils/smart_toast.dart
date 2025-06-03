@@ -96,13 +96,13 @@ class _AlertBodyState extends State<AlertBody> with SingleTickerProviderStateMix
                 ? Colors.grey.shade200 // Light gray for neutral notifications
                 : widget.isError
                     ? Colors.amber
-                    : AppColors.kPrimary,
+              : AppColors.kWhite,
             border: Border.all(
                 color: widget.isNeutralMessage
                     ? Colors.grey.shade400.withAlpha((255*0.7).toInt()) // Slightly darker gray for border
                     : widget.isError
                         ?  Colors.amber.withAlpha((255*0.7).toInt())
-                        : AppColors.kPrimary.withAlpha((255*0.7).toInt()),
+                : AppColors.kWhite.withAlpha((255 * 0.7).toInt()),
                 width: 3),
             borderRadius: BorderRadius.circular(15.r)),
         height: 75.h,
@@ -122,7 +122,9 @@ class _AlertBodyState extends State<AlertBody> with SingleTickerProviderStateMix
                         height: 30.w,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: widget.isError ?  Colors.amber.withAlpha((255*0.4).toInt()) : AppColors.kPrimary,
+                          color: widget.isError
+                              ? Colors.amber.withAlpha((255 * 0.4).toInt())
+                              : AppColors.kWhite,
                         ),
                         alignment: Alignment.center,
                         child: IconButton(

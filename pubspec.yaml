@@ -80,7 +80,7 @@ flutter:
     - family: IBMPlexSans
       fonts:
         - asset: assets/fonts/IBMPlexSans-VariableFont_wdth,wght.ttf
-        - asset: fonts/IBMPlexSans-Italic-VariableFont_wdth,wght.ttf
+        - asset: assets/fonts/IBMPlexSans-Italic-VariableFont_wdth,wght.ttf
           # style: italic
   #   - family: Trajan Pro
   #     fonts:
