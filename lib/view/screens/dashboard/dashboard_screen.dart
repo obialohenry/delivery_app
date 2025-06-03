@@ -1,6 +1,5 @@
 import 'package:deliveryapp/src/components.dart';
 import 'package:deliveryapp/src/config.dart';
-import 'package:deliveryapp/view/components/image_view.dart';
 import 'package:deliveryapp/view_model/dashboard_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -13,6 +12,7 @@ class DashboardScreen extends ConsumerStatefulWidget {
 }
 
 class _DashboardScreenState extends ConsumerState<DashboardScreen> {
+  TextEditingController _controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     final dashboardProvider = ref.watch(dashboardViewModel);
@@ -21,6 +21,10 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
         appBar: AppBars.mainAppBar(
           context,
           title: dashboardProvider.screenTitle(dashboardProvider.currentIndex),
+          showSearchWidget: dashboardProvider.showSearchTextfieldInDashboardScreen(
+            dashboardProvider.currentIndex,
+          ),
+          controller: _controller,
         ),
         body: dashboardProvider.screens[dashboardProvider.currentIndex],
         backgroundColor: AppColors.kSoftSnow,

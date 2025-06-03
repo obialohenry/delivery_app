@@ -13,4 +13,6 @@ class AppColors {
   static const kLavenderHaze = Color(0xffF6F5F8);
   static const kSuccess500 = Color(0xff10B981);
   static const kGrey200 = Color(0xffE2E8F0);
+  static const kGrey300 = Color(0xffCBD5E1);
+  static const kLavenderMist = Color(0xffF5F4F7);
 }

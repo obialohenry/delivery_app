@@ -6,12 +6,12 @@ class AppBars {
   static PreferredSizeWidget mainAppBar(
     BuildContext context, {
     bool showSearchWidget = false,
-    Widget? searchWidget,
-   String? title,
+    String? title,
+    TextEditingController? controller,
   }) {
   
     return PreferredSize(
-      preferredSize: Size(0,showSearchWidget? 205.h:135.h),
+      preferredSize: Size(0, showSearchWidget ? 180.h : 135.h),
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 10.w),
         decoration: BoxDecoration(color: AppColors.kWhite,border: Border.symmetric(horizontal: BorderSide(color: AppColors.kMistBlue))),
@@ -40,7 +40,54 @@ class AppBars {
             showSearchWidget?Column(
               children: [
                 Gap(8.h),
-                searchWidget!
+                      Container(
+                        margin: EdgeInsets.symmetric(horizontal: 10.w),
+                        height: 36.h,
+                        width: double.infinity,
+
+                        decoration: BoxDecoration(
+                          color: Colors.transparent,
+                          borderRadius: BorderRadius.circular(5.r),
+                          border: Border.all(color: AppColors.kGrey200),
+                        ),
+                        child: TextFormField(
+                          onChanged: (value) {},
+
+                          controller: controller,
+                          style: TextStyle(
+                            color: AppColors.kBlack,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: ibmPlexSans,
+                            fontSize: 14.spMin,
+                          ),
+                          keyboardType: TextInputType.text,
+                          readOnly: false,
+                          enabled: false,
+                          textAlign: TextAlign.start,
+                          decoration: InputDecoration(
+                            //  label:
+                            border: UnderlineInputBorder(
+                              borderRadius: BorderRadius.circular(5.r),
+                              borderSide: BorderSide(color: AppColors.kGrey200),
+                            ),
+                            hintText: "Search...",
+                            hintStyle: TextStyle(
+                              color: AppColors.kGrey300,
+                              fontFamily: ibmPlexSans,
+                              fontSize: 14.spMin,
+                              fontWeight: FontWeight.w400,
+                              height: (20 / 14).h,
+                            ),
+                            prefixIcon: ImageView.asset(AppImages.searchIcon, scale: 4.0),
+                            filled: false,
+                            contentPadding: const EdgeInsets.symmetric(horizontal: 16),
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(5.r),
+                              borderSide: const BorderSide(color: AppColors.kGrey200),
+                            ),
+                          ),
+                        ),
+                      )
               ],
             )
             :SizedBox.shrink(),

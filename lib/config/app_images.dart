@@ -9,4 +9,8 @@ class AppImages {
   static const arrowBackIcon = "${_baseUrl}delivery_app_arrow_back_icon.png";
   static const phoneIcon = "${_baseUrl}delivery_app_phone_icon.png";
   static const deleteIcon = "${_baseUrl}delivery_app_delete_icon.png";
+  static const searchIcon = "${_baseUrl}delivery_app_search_icon.png";
+  static const earpudIcon = "${_baseUrl}delivery_app_earpud_icon.png";
+  static const googlePhoneIcon = "${_baseUrl}delivery_app_google_icon.png";
+  static const laptopIcon = "${_baseUrl}delivery_app_laptop_icon.png";
 }

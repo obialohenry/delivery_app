@@ -1,18 +1,91 @@
-
 import 'package:deliveryapp/src/components.dart';
 import 'package:deliveryapp/src/config.dart';
+import 'package:deliveryapp/src/models.dart';
+import 'package:deliveryapp/view_model/home_view_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
 
   @override
+  ConsumerState<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends ConsumerState<HomeScreen> {
+  @override
   Widget build(BuildContext context) {
+    final homeProvider = ref.watch(homeViewModel);
     return Scaffold(
       backgroundColor: AppColors.kSoftSnow,
-      body: Center(
-        child: TextView(text: "Welcome to Home Screen.",fontSize: 18.spMin,fontWeight: FontWeight.bold,color: Colors.black,),
+      body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
+        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            TextView(
+              text: smartPhonesAndAccessories,
+              fontSize: 18.spMin,
+              fontWeight: FontWeight.w500,
+              color: AppColors.kBlack,
+              maxLines: 2,
+            ),
+            Gap(10.h),
+            GridView.builder(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                mainAxisExtent: 234.h,
+                mainAxisSpacing: 10.h,
+              ),
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: homeProvider.accessories.length,
+              itemBuilder: (context, index) {
+                AccessoriesModel accessories = homeProvider.accessories[index];
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      width: 162.w,
+                      height: 162.h,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8.62.r),
+                        color: AppColors.kLavenderMist,
+                      ),
+                      child: ImageView.asset(
+                        accessories.image,
+                        //  width: 100.w,
+                        //  height: 100.h,
+                      ),
+                    ),
+                    Gap(3.h),
+                    TextView(
+                      text: accessories.name,
+                      fontSize: 14.spMin,
+                      fontWeight: FontWeight.w400,
+                      color: AppColors.kBlack,
+                    ),
+                    TextView(
+                      text: "${accessories.descriptions[0]}|${accessories.descriptions[1]}",
+                      fontSize: 14.spMin,
+                      fontWeight: FontWeight.w400,
+                      color: AppColors.kBlack,
+                    ),
+                    Gap(3.h),
+                    TextView(
+                      text: "\$${accessories.price}",
+                      fontSize: 16.spMin,
+                      fontWeight: FontWeight.w700,
+                      color: AppColors.kBlack,
+                    ),
+                  ],
+                );
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

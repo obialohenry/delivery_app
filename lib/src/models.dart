@@ -1,0 +1,1 @@
+export 'package:deliveryapp/model/local/accessories_model.dart';

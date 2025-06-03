@@ -32,4 +32,20 @@ class DashboardViewModel extends ChangeNotifier {
         return "";
     }
   }
+  
+  //return a boolean value based on the argument index.
+  bool showSearchTextfieldInDashboardScreen(int index) {
+    switch (index) {
+      case 0:
+        return true;
+      case 1:
+        return false;
+      case 2:
+        return false;
+      case 3:
+        return false;
+      default:
+        return false;
+    }
+  }
 }

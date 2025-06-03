@@ -13,4 +13,4 @@ const subTotal = "Subtotal";
 const shipping = "Shipping";
 const total = "Total";
 const technology = "Technology";
-
+const smartPhonesAndAccessories = "Smartphones, Laptops & Assecories";
