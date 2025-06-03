@@ -92,7 +92,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                       ),
                       Gap(3.h),
                       TextView(
-                        text: "\$${accessories.price}",
+                        text: "\$${accessories.price.toStringAsFixed(2)}",
                         fontSize: 16.spMin,
                         fontWeight: FontWeight.w700,
                         color: AppColors.kBlack,

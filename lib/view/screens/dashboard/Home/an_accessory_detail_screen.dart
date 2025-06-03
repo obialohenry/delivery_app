@@ -86,7 +86,7 @@ class _AnAccessoryDetailsScreenState extends ConsumerState<AnAccessoryDetailsScr
             ),
             Gap(12.h),
             TextView(
-              text: "\$${widget.price}",
+              text: "\$${widget.price.toStringAsFixed(2)}",
               fontWeight: FontWeight.w700,
               fontSize: 32.75.spMin,
               color: AppColors.kBlack,
