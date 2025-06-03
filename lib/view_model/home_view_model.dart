@@ -6,6 +6,15 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 final homeViewModel = ChangeNotifierProvider((ref) => HomeViewModel());
 
 class HomeViewModel extends ChangeNotifier {
+  bool _iLoveThisAccessory = false;
+  bool get iLoveThisAccessory => _iLoveThisAccessory;
+
+  void toggleILoveThisAccessory() {
+    _iLoveThisAccessory = !_iLoveThisAccessory;
+    notifyListeners();
+  }
+
+  //List of Accessories in my store.
   final List<AccessoriesModel> _accessories = [
     AccessoriesModel(
       name: "Apple iPhone 16",

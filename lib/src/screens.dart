@@ -4,3 +4,4 @@ export 'package:deliveryapp/view/screens/dashboard/Home/home_screen.dart';
 export 'package:deliveryapp/view/screens/dashboard/cart_screen.dart';
 export 'package:deliveryapp/view/screens/dashboard/favorites_screen.dart';
 export 'package:deliveryapp/view/screens/dashboard/profile_screen.dart';
+export 'package:deliveryapp/view/screens/dashboard/Home/an_accessory_detail_screen.dart';

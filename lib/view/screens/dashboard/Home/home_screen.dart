@@ -1,7 +1,8 @@
 import 'package:deliveryapp/src/components.dart';
 import 'package:deliveryapp/src/config.dart';
 import 'package:deliveryapp/src/models.dart';
-import 'package:deliveryapp/view_model/home_view_model.dart';
+import 'package:deliveryapp/src/screens.dart';
+import 'package:deliveryapp/src/view_models.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -43,44 +44,61 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               itemCount: homeProvider.accessories.length,
               itemBuilder: (context, index) {
                 AccessoriesModel accessories = homeProvider.accessories[index];
-                return Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      width: 162.w,
-                      height: 162.h,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8.62.r),
-                        color: AppColors.kLavenderMist,
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => AnAccessoryDetailsScreen(
+                          name: accessories.name,
+                          price: accessories.price,
+                          image: accessories.image,
+                          detail1: accessories.descriptions[0],
+                          detail2: accessories.descriptions[1],
+                          accessory: accessories,
+                        ),
                       ),
-                      child: ImageView.asset(
-                        accessories.image,
-                        //  width: 100.w,
-                        //  height: 100.h,
+                    );
+                  },
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        width: 162.w,
+                        height: 162.h,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8.62.r),
+                          color: AppColors.kLavenderMist,
+                        ),
+                        child: ImageView.asset(
+                          accessories.image,
+                          //  width: 100.w,
+                          //  height: 100.h,
+                        ),
                       ),
-                    ),
-                    Gap(3.h),
-                    TextView(
-                      text: accessories.name,
-                      fontSize: 14.spMin,
-                      fontWeight: FontWeight.w400,
-                      color: AppColors.kBlack,
-                    ),
-                    TextView(
-                      text: "${accessories.descriptions[0]}|${accessories.descriptions[1]}",
-                      fontSize: 14.spMin,
-                      fontWeight: FontWeight.w400,
-                      color: AppColors.kBlack,
-                    ),
-                    Gap(3.h),
-                    TextView(
-                      text: "\$${accessories.price}",
-                      fontSize: 16.spMin,
-                      fontWeight: FontWeight.w700,
-                      color: AppColors.kBlack,
-                    ),
-                  ],
+                      Gap(3.h),
+                      TextView(
+                        text: accessories.name,
+                        fontSize: 14.spMin,
+                        fontWeight: FontWeight.w400,
+                        color: AppColors.kBlack,
+                      ),
+                      TextView(
+                        text: "${accessories.descriptions[0]}|${accessories.descriptions[1]}",
+                        fontSize: 14.spMin,
+                        fontWeight: FontWeight.w400,
+                        color: AppColors.kBlack,
+                      ),
+                      Gap(3.h),
+                      TextView(
+                        text: "\$${accessories.price}",
+                        fontSize: 16.spMin,
+                        fontWeight: FontWeight.w700,
+                        color: AppColors.kBlack,
+                      ),
+                    ],
+                  ),
                 );
               },
             ),

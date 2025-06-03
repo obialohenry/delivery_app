@@ -15,4 +15,5 @@ class AppColors {
   static const kGrey200 = Color(0xffE2E8F0);
   static const kGrey300 = Color(0xffCBD5E1);
   static const kLavenderMist = Color(0xffF5F4F7);
+  static const kSlateGrey = Color(0xff999999);
 }
