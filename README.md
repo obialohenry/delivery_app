@@ -20,6 +20,7 @@ A Flutter-based delivery application showcasing a complete shopping experience w
 ![App screenshot](./assets/screen_shots/9.jpg)
 ![App screenshot](./assets/screen_shots/10.jpg)
 ![App screenshot](./assets/screen_shots/11.jpg)
+![App screenshot](./assets/screen_shots/14.jpg)
 
 ### Favorite Screen
 ![App screenshot](./assets/screen_shots/12.jpg)
