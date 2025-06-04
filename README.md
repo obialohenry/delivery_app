@@ -5,24 +5,29 @@ A Flutter-based delivery application showcasing a complete shopping experience w
 ## 📱 Screenshots
 
 ### Home Screen & Product Listing
-<div style="display: flex; gap: 10px;">
-  <img src="screenshots/home_screen.png" width="200" alt="Home Screen">
-  <img src="screenshots/product_listing.png" width="200" alt="Product Listing">
-</div>
+![App screenshot](./assets/screen_shots/1.jpg)
 
 ### Product Details & Cart Management
-<div style="display: flex; gap: 10px;">
-  <img src="screenshots/product_details.png" width="200" alt="Product Details">
-  <img src="screenshots/add_to_cart.png" width="200" alt="Add to Cart">
-  <img src="screenshots/cart_screen.png" width="200" alt="Cart Screen">
-</div>
+![App screenshot](./assets/screen_shots/2.jpg)
+![App screenshot](./assets/screen_shots/3.jpg)
+![App screenshot](./assets/screen_shots/4.jpg)
+![App screenshot](./assets/screen_shots/5.jpg)
 
 ### Cart Operations & Checkout
-<div style="display: flex; gap: 10px;">
-  <img src="screenshots/cart_management.png" width="200" alt="Cart Management">
-  <img src="screenshots/checkout.png" width="200" alt="Checkout">
-  <img src="screenshots/favorites.png" width="200" alt="Favorites">
-</div>
+![App screenshot](./assets/screen_shots/6.jpg)
+![App screenshot](./assets/screen_shots/7.jpg)
+![App screenshot](./assets/screen_shots/8.jpg)
+![App screenshot](./assets/screen_shots/9.jpg)
+![App screenshot](./assets/screen_shots/10.jpg)
+![App screenshot](./assets/screen_shots/14.jpg)
+![App screenshot](./assets/screen_shots/11.jpg)
+
+
+### Favorite Screen
+![App screenshot](./assets/screen_shots/12.jpg)
+
+### Profile Screen
+![App screenshot](./assets/screen_shots/13.jpg)
 
 ## 🛠️ Tech Stack
 
