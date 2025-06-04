@@ -14,4 +14,5 @@ class AppImages {
   static const googlePhoneIcon = "${_baseUrl}delivery_app_google_icon.png";
   static const laptopIcon = "${_baseUrl}delivery_app_laptop_icon.png";
   static const pinkFavoriteIcon = "${_baseUrl}pink_favorite_icon.png";
+  static const checkCircleIcon = "${_baseUrl}delivery_app_check_circle.png";
 }

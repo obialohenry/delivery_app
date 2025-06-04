@@ -19,12 +19,12 @@ class HomeViewModel extends ChangeNotifier {
     _cart.add(item);
     _accessoryItemCount.add(1);
     notifyListeners();
-    showToast(msg: "${item.name} added to cart", isError: false);
+    showToast(msg: "${item.name} has been added to cart", isError: false);
   }
 
   //remove an already added accessory from user cart.
   void removeAccessoryFromCart(int index) {
-    showToast(msg: "${_cart[index].name} removed from cart", isError: true);
+    showToast(msg: "${_cart[index].name} has been removed from cart", isError: true);
     _cart.removeAt(index);
     _accessoryItemCount.removeAt(index);
     notifyListeners();

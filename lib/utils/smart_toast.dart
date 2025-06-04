@@ -90,71 +90,66 @@ class _AlertBodyState extends State<AlertBody> with SingleTickerProviderStateMix
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 18.0),
-      child: Container(
-        decoration: BoxDecoration(
-            color: widget.isNeutralMessage
-                ? Colors.grey.shade200 // Light gray for neutral notifications
-                : widget.isError
-                    ? Colors.amber
-              : AppColors.kWhite,
-            border: Border.all(
+      child: Stack(
+        children: [
+          //Green container.
+          Container(
+            decoration: BoxDecoration(
+              color: AppColors.kVerdantBreeze,
+              borderRadius: BorderRadius.circular(8.r),
+            ),
+            height: 56.h,
+            width: 335.w,
+          ),
+          Positioned(
+            left: 3.w,
+            child: Container(
+              decoration: BoxDecoration(
                 color: widget.isNeutralMessage
-                    ? Colors.grey.shade400.withAlpha((255*0.7).toInt()) // Slightly darker gray for border
+                    ? Colors
+                          .grey
+                          .shade200 // Light gray for neutral notifications
                     : widget.isError
-                        ?  Colors.amber.withAlpha((255*0.7).toInt())
-                : AppColors.kWhite.withAlpha((255 * 0.7).toInt()),
-                width: 3),
-            borderRadius: BorderRadius.circular(15.r)),
-        height: 75.h,
-        width: 360.w,
-        child: Stack(
-         
-          children: [
-            Container(
-              padding: const EdgeInsets.all(8),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      Container(
-                        width: 30.w,
-                        height: 30.w,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: widget.isError
-                              ? Colors.amber.withAlpha((255 * 0.4).toInt())
-                              : AppColors.kWhite,
-                        ),
-                        alignment: Alignment.center,
-                        child: IconButton(
-                          onPressed: widget.cancel,
-                         
-                          icon: Icon(
-                            widget.isError ? Icons.close : Icons.check,
-                            size: 15.spMin,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                      const Gap(7),
-                      SizedBox(
-                        width: 250.w,
-                        child: TextView(
-                          text: widget.msg,
-                          color: AppColors.kBlack,
-                          fontSize: 14.spMin,
-                          maxLines: 3,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ],
+                    ? Colors.red[100]
+                    : AppColors.kGrey200,
+                borderRadius: BorderRadius.circular(8.r),
+                boxShadow: [
+                  BoxShadow(
+                    color: Color(0x26000000),
+                    offset: Offset(0, 16),
+                    blurRadius: 24,
+                    spreadRadius: 0,
                   ),
                 ],
               ),
+              height: 56.h,
+              width: 335.w,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ImageView.asset(AppImages.checkCircleIcon, width: 24.w, height: 24.h),
+                  SizedBox(
+                    width: 250.w,
+                    child: TextView(
+                      text: widget.msg,
+                      color: AppColors.kGrey700,
+                      fontSize: 14.spMin,
+                      maxLines: 3,
+                      fontFamily: sfPro,
+                      height: (20 / 14).h,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.close, color: AppColors.kGrey700, size: 24.spMin),
+                    onPressed: widget.cancel,
+                  )
+                ],
+              ),
             ),
-          ],
-        ),
+          ),
+         
+        ]
       ),
     );
   }
