@@ -86,6 +86,9 @@ flutter:
     - family: SF Pro
       fonts:
         - asset: assets/fonts/SFPRODISPLAYREGULAR.otf
+    - family: IBMPlexMono
+      fonts:
+        - asset: assets/fonts/IBMPlexMono-Regular.ttf
         
   #
   # For details regarding fonts from package dependencies,

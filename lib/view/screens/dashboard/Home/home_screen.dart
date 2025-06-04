@@ -31,6 +31,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               fontWeight: FontWeight.w500,
               color: AppColors.kBlack,
               maxLines: 2,
+              fontFamily: ibmPlexMono,
             ),
             Gap(10.h),
             GridView.builder(
