@@ -1,6 +1,7 @@
 import 'package:deliveryapp/src/components.dart';
 import 'package:deliveryapp/src/config.dart';
-import 'package:deliveryapp/view_model/dashboard_view_model.dart';
+import 'package:badges/badges.dart' as badges;
+import 'package:deliveryapp/src/view_models.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -16,6 +17,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
   @override
   Widget build(BuildContext context) {
     final dashboardProvider = ref.watch(dashboardViewModel);
+    final homeCartProvider = ref.watch(homeViewModel);
     return SafeArea(
       child: Scaffold(
         appBar: AppBars.mainAppBar(
@@ -65,13 +67,33 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
                 activeIcon: NavBarActiveIconItem(iconImage: AppImages.homeIcon),
               ),
               BottomNavigationBarItem(
-                icon: Padding(
-                  padding: EdgeInsets.only(bottom: 8.0.h),
-                  child: ImageView.asset(AppImages.cartIcon, height: 24.h, width: 24.w),
+                icon: badges.Badge(
+                  position: badges.BadgePosition.topEnd(top: -14, end: -15),
+                  showBadge: homeCartProvider.cart.isNotEmpty,
+                  badgeContent: TextView(
+                    text: homeCartProvider.cart.length.toString(),
+                    fontSize: 14.spMin,
+                    fontWeight: FontWeight.w700,
+                    color: AppColors.kBlack,
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.only(bottom: 8.0.h),
+                    child: ImageView.asset(AppImages.cartIcon, height: 24.h, width: 24.w),
+                  ),
                 ),
                 label: cart,
                 backgroundColor: AppColors.kEtherealWhite,
-                activeIcon: NavBarActiveIconItem(iconImage: AppImages.cartIcon),
+                activeIcon: badges.Badge(
+                  position: badges.BadgePosition.topEnd(top: -14, end: -12),
+                  showBadge: homeCartProvider.cart.isNotEmpty,
+                  badgeContent: TextView(
+                    text: homeCartProvider.cart.length.toString(),
+                    fontSize: 14.spMin,
+                    fontWeight: FontWeight.w700,
+                    color: AppColors.kBlack,
+                  ),
+                  child: NavBarActiveIconItem(iconImage: AppImages.cartIcon),
+                ),
               ),
               BottomNavigationBarItem(
                 icon: Padding(

@@ -13,7 +13,7 @@ class HomeViewModel extends ChangeNotifier {
   List<int> get accessoryItemCount => _accessoryItemCount;
   List<AccessoriesModel> _cart = [];
   List<AccessoriesModel> get cart => _cart;
-
+  
   //Add an accessory to user cart.
   void addAccessoryToCart(AccessoriesModel item) {
     _cart.add(item);
