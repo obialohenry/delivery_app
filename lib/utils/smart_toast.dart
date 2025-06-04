@@ -95,7 +95,7 @@ class _AlertBodyState extends State<AlertBody> with SingleTickerProviderStateMix
           //Green container.
           Container(
             decoration: BoxDecoration(
-              color: AppColors.kVerdantBreeze,
+              color: widget.isError ? Colors.red : AppColors.kVerdantBreeze,
               borderRadius: BorderRadius.circular(8.r),
             ),
             height: 56.h,
@@ -105,13 +105,7 @@ class _AlertBodyState extends State<AlertBody> with SingleTickerProviderStateMix
             left: 3.w,
             child: Container(
               decoration: BoxDecoration(
-                color: widget.isNeutralMessage
-                    ? Colors
-                          .grey
-                          .shade200 // Light gray for neutral notifications
-                    : widget.isError
-                    ? Colors.red[100]
-                    : AppColors.kGrey200,
+                color: AppColors.kGrey200,
                 borderRadius: BorderRadius.circular(8.r),
                 boxShadow: [
                   BoxShadow(
