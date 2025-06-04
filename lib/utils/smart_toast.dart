@@ -92,7 +92,7 @@ class _AlertBodyState extends State<AlertBody> with SingleTickerProviderStateMix
       padding: const EdgeInsets.symmetric(horizontal: 18.0),
       child: Stack(
         children: [
-          //Green container.
+          //Green or Red container.
           Container(
             decoration: BoxDecoration(
               color: widget.isError ? Colors.red : AppColors.kVerdantBreeze,
