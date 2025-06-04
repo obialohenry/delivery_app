@@ -85,8 +85,6 @@ class AppBars {
                               fontSize: 14.spMin,
                             ),
                             keyboardType: TextInputType.text,
-                            readOnly: false,
-                            enabled: false,
                             textAlign: TextAlign.start,
                             decoration: InputDecoration(
                               //  label:
@@ -108,6 +106,10 @@ class AppBars {
                               enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(5.r),
                                 borderSide: const BorderSide(color: AppColors.kGrey200),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(5.r),
+                                borderSide: BorderSide(color: AppColors.kSkylineBlue, width: 2),
                               ),
                             ),
                           ),
