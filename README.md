@@ -5,7 +5,7 @@ A Flutter-based delivery application showcasing a complete shopping experience w
 ## 📱 Screenshots
 
 ### Home Screen & Product Listing
-[screen_shots](1.jpg)
+[assets](screen_shots/1.jpg)
 
 ### Product Details & Cart Management
 <div style="display: flex; gap: 10px;">
